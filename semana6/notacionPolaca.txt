@@ -1,0 +1,55 @@
+ALGORITMO PARA CONVERTIR UNA EXPRESIÓN INFIJA EN POSTFIJA. ----->.  ANALIZAR LA CLASE PILA Y DETERMINAR EN ESTE SEUDOCODIGO SU FUNCIONALIDAD
+      { TRADUCE UNA EI A POSTFIJA UTILIZANDO UNA PILA  }
+
+IMPLENTAR EN C/C++ EL SIGUIENTE SEUDOCODIGO
+
+1.    Hacer tope <- 0
+
+
+2.    Repetir mientras E.I. sea diferente de cadena vacía. // o no sea el fin de cadena      
+       Iniciar con el símbolo más a la izq. de E.I. , recortando luego la expresión
+
+
+2.1   Si el simbolo es paréntesis izquierdo
+       Entonces { poner símbolo en la pila }  ESTOS SON COMENTARIOS {}
+       Hacer   tope <-  tope + 1    y
+               pila[tope] <- simbolo
+        Sino
+        2.1.1  Si símbolo es paréntesis derecho
+                  Entonces
+                  2.1.1.1  Repetir mientras pila[tope]  < >  paréntesis izquierdo
+                               Hacer EPOS <- EPOS + pila[tope] y.    
+                                          tope <- tope - 1
+                  2.1.1.2  {  FIN DEL CICLO  2.1.1.1  }
+                  { SACAMOS EL PARÉNTESIS IZQ. DE LA PILA Y LO DESCARTAMOS }
+
+                     Hacer    tope <-  tope - 1 
+                  Sino
+                  2.1.1.3  Si simbolo es un operando
+                               Entonces
+						    Agregar simbolo a EPOS
+                                   sino  { ES UN OPERADOR }
+                               2.1.1.3.A  Repetir mientras  tope  >  0  y la prioridad del operador sea menor o igual
+                                                   que la prioridad del operador que esta en la cima de la pila
+                                               Hacer   EPOS  <-  EPOS +  Pila[tope] y
+                                                       tope <- tope - 1
+                               2.1.1.3.B  { FIN DEL CICLO  2.1.1.3.A }
+                                      Hacer  tope <-  tope + 1
+                                      Pila[tope]  <- simbolo
+                  2.1.1.4 {  FIN DEL CONDICIONAL  2.1.1.3 }
+          2.1.2 { FIN DEL CONDICIONAL 2.1.1  }
+2.2   { FIN DEL CONDICIONAL 2.1  }
+
+
+3. {FIN DEL CICLO  2 }
+
+
+4. Repetir mientras tope  >   0
+    Hacer EPOS <- EPOS + Pila[tope]
+               tope <-  tope - 1
+
+
+5.  {Fin del ciclo  4 }
+
+
+6.  ESCRIBIR EPOS

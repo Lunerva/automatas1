@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>21130876_LuisBarranco</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:repeat, x1:0.292, y1:0.38, x2:0.663, y2:0.699, stop:0 rgba(170, 112, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_convertir">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>150</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1.887, fx:0.494, fy:0.5, stop:0 rgba(166, 236, 0, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(0, 0, 0);
+font: 75 12pt &quot;Miriam Libre&quot;;</string>
+   </property>
+   <property name="text">
+    <string>CONVERTIR</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_solucion">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>250</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1.887, fx:0.494, fy:0.5, stop:0 rgba(166, 236, 0, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(0, 0, 0);
+font: 75 12pt &quot;Miriam Libre&quot;;</string>
+   </property>
+   <property name="text">
+    <string>SOLUCION</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_infija">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1.887, fx:0.494, fy:0.5, stop:0 rgba(166, 236, 0, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(0, 0, 0);
+font: 75 12pt &quot;Miriam Libre&quot;;</string>
+   </property>
+   <property name="text">
+    <string>NOTACION INFIJA</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_posfija">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>400</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1.887, fx:0.494, fy:0.5, stop:0 rgba(166, 236, 0, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(0, 0, 0);
+font: 75 12pt &quot;Miriam Libre&quot;;</string>
+   </property>
+   <property name="text">
+    <string>NOTACION POSTFIJA</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_res">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>363</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(0, 0, 0);
+font: 75 12pt &quot;Miriam Libre&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_infija">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font: 75 12pt &quot;Miriam Libre&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>101</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font: 75 10pt &quot;Miriam Libre&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_vaciar">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>410</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 10pt &quot;Miriam Libre&quot;;
+background-color: rgb(255, 66, 66);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Vaciar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
