@@ -16,19 +16,17 @@ public class main extends javax.swing.JFrame {
 
         jLabel_regex.setText("Expresion actual: " + expReg);
         jTextField_cadena.setText(cad);
-        
+
         jComboBox_ejemplos.removeAllItems();
-        jComboBox_ejemplos.addItem("color hexadecimal");
-        jComboBox_ejemplos.addItem("direccion email");
-        jComboBox_ejemplos.addItem("separador de miles");
         
-        jComboBox_ejemplos.addItem("quitar espacios");
-        jComboBox_ejemplos.addItem("ID de video de youtube");
+        jComboBox_ejemplos.addItem("validar color hexadecimal");
+        jComboBox_ejemplos.addItem("validar direccion email");
+        jComboBox_ejemplos.addItem("validar miles");
+        
+        jComboBox_ejemplos.addItem("validar video de youtube");
         jComboBox_ejemplos.addItem("validar ISBN");
-        
-        jComboBox_ejemplos.addItem("usuario de twitter");
-        
-        
+        jComboBox_ejemplos.addItem("validar usuario de twitter");
+
     }
 
     /**
@@ -45,20 +43,19 @@ public class main extends javax.swing.JFrame {
         jTextField_cadena = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton_comprobar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea_res = new javax.swing.JTextArea();
         jTextField_regex = new javax.swing.JTextField();
         jButton_cambiar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jComboBox_ejemplos = new javax.swing.JComboBox<>();
+        jLabel_res = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("21130876");
         setName("21130876"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel1.setText("EXPRESIONES REGULARES");
+        jLabel1.setText("EXPRESIONES REGULARES TAREA 3");
 
         jLabel_regex.setText("Expresion actual:");
 
@@ -77,11 +74,6 @@ public class main extends javax.swing.JFrame {
                 jButton_comprobarActionPerformed(evt);
             }
         });
-
-        jTextArea_res.setEditable(false);
-        jTextArea_res.setColumns(20);
-        jTextArea_res.setRows(5);
-        jScrollPane1.setViewportView(jTextArea_res);
 
         jTextField_regex.setToolTipText("");
         jTextField_regex.addActionListener(new java.awt.event.ActionListener() {
@@ -108,52 +100,45 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jLabel_res.setText("-----");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 112, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton_comprobar)
-                                .addGap(49, 49, 49))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField_cadena, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(65, 65, 65))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jButton_cambiar)
-                                        .addGap(52, 52, 52))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox_ejemplos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel_regex)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField_regex)))
-                                .addGap(18, 18, 18)))))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField_cadena))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField_regex))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel_regex)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox_ejemplos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton_cambiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton_comprobar, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(143, 143, 143)
+                                .addComponent(jLabel_res)))
+                        .addGap(0, 74, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -162,28 +147,23 @@ public class main extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel_regex)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField_regex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_cambiar)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField_cadena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_comprobar)
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jComboBox_ejemplos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(jLabel_regex)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_regex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton_cambiar))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField_cadena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_comprobar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel_res)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBox_ejemplos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -201,25 +181,17 @@ public class main extends javax.swing.JFrame {
 
         cad = jTextField_cadena.getText();
 
-
         Pattern p = Pattern.compile(expReg); // expresion regular asignada
         Matcher m = p.matcher(cad);   // get a matcher object
-        int count = 0; // creamos e inicializamos contador
 
-        while (m.find()) {
-            //va mostrando la posicion de inicio y fin de donde se encuentra 
-            //la palabra que cumple la condicion
-            //ademas cuenta el numero de palabras que coinciden
-            count++;
+        if (m.find()) {
             res.append("COINCIDE!!\n");
-            System.out.println("Match number " + count);
-            res.append("Match number " + count + "\n");
-            System.out.println("start(): " + m.start());
-            res.append("start(): " + m.start() + "\n");
-            System.out.println("end(): " + m.end());
-            res.append("end(): " + m.end() + "\n");
 
-            jTextArea_res.setText(res.toString());
+            jLabel_res.setText(res.toString());
+        } else {
+            res.append("NO COINCIDE!!\n");
+
+            jLabel_res.setText(res.toString());
         }
     }//GEN-LAST:event_jButton_comprobarActionPerformed
 
@@ -236,60 +208,58 @@ public class main extends javax.swing.JFrame {
     private void jComboBox_ejemplosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_ejemplosItemStateChanged
         // TODO add your handling code here:
         System.out.println("enrtramos");
-        switch(jComboBox_ejemplos.getSelectedIndex()){
+        switch (jComboBox_ejemplos.getSelectedIndex()) {
             case 0:
+                jLabel_res.setText("---");
                 System.out.println("en cero");
-                expReg="#([a-fA-F]|[0-9]){3,6}";
-                jTextField_regex.setText(expReg); 
-                cad="#ffffff";
+                expReg = "#([a-fA-F]|[0-9]){3,6}";
+                jTextField_regex.setText(expReg);
+                cad = "#ffffff";
                 jTextField_cadena.setText(cad);
                 jButton_cambiar.doClick();
                 break;
             case 1:
+                jLabel_res.setText("---");
                 System.out.println("en uno");
-                expReg="/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/img";
-                jTextField_regex.setText(expReg); 
-                cad="ejemplo@correo.com";
+                expReg = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,63}";
+                jTextField_regex.setText(expReg);
+                cad = "ejemplo@correo.com";
                 jTextField_cadena.setText(cad);
                 jButton_cambiar.doClick();
                 break;
             case 2:
+                jLabel_res.setText("---");
                 System.out.println("en dos");
-                expReg="/d{1,3}(?=(d{3})+(?!d))/g";
-                jTextField_regex.setText(expReg); 
-                cad="10,000";
+                expReg = "\\d{1,3}(?=(\\d{3})+(?!\\d))";
+                jTextField_regex.setText(expReg);
+                cad = "1000";
                 jTextField_cadena.setText(cad);
                 jButton_cambiar.doClick();
                 break;
             case 3:
-                System.out.println("en tres");
-                expReg="^[ s]+|[ s]+$";
-                jTextField_regex.setText(expReg); 
-                cad="los espacios entre espacios";
+                jLabel_res.setText("---");
+                System.out.println("en cuatro");
+                expReg = "(?:https?://)?(?:www\\.)?youtube\\.com/watch\\?v=\\w{11}";
+                jTextField_regex.setText(expReg);
+                cad = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
                 jTextField_cadena.setText(cad);
                 jButton_cambiar.doClick();
                 break;
             case 4:
-                System.out.println("en cuatro");
-                expReg="/http://(?:youtu.be/|(?:[a-z]{2,3}.)?youtube.com/watch(?:?|#!)v=)([w-]{11}).*/gi";
-                jTextField_regex.setText(expReg); 
-                cad="youtube.com/";
+                jLabel_res.setText("---");
+                System.out.println("en cinco");
+                expReg = "\\b(?=(?:\\D*\\d){10}(?:\\D*\\d|\\b))(?:\\d[-]?){3}\\d\\b|\\b(?=(?:\\D*\\d){13}\\D*\\b)[\\d-]+\\b";
+                jTextField_regex.setText(expReg);
+                cad = "978-0-306-40615-7";
                 jTextField_cadena.setText(cad);
                 jButton_cambiar.doClick();
                 break;
             case 5:
-                System.out.println("en cinco");
-                expReg="/b(?:ISBN(?:: ?| ))?((?:97[89])?d{9}[dx])b/i";
-                jTextField_regex.setText(expReg); 
-                cad="0-7645-2641-3";
-                jTextField_cadena.setText(cad);
-                jButton_cambiar.doClick();
-                break;
-            case 6:
+                jLabel_res.setText("---");
                 System.out.println("en seis");
-                expReg="/@([A-Za-z0-9_]{1,15})/";
-                jTextField_regex.setText(expReg); 
-                cad="@lilmonix3";
+                expReg = "@([A-Za-z0-9_]{1,15})";
+                jTextField_regex.setText(expReg);
+                cad = "@lilmonix3";
                 jTextField_cadena.setText(cad);
                 jButton_cambiar.doClick();
                 break;
@@ -350,8 +320,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel_regex;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea_res;
+    private javax.swing.JLabel jLabel_res;
     private javax.swing.JTextField jTextField_cadena;
     private javax.swing.JTextField jTextField_regex;
     // End of variables declaration//GEN-END:variables
