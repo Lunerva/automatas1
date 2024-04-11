@@ -1,0 +1,34 @@
+elementos basicos
+
+.	cualquier caracter menos nueva linea
+\d 	cualquier digito
+\D	no digitoZ
+\w	palabra (a-z,A-Z,0-9,_)
+\W	no es palabra
+\s	espacios
+\S	no espacios
+
+limites
+^	inicio de una cadena
+$	final de una cadena
+\b	limite de palabra
+\B	no limite
+
+cuantificadores
+*	0 o mas
++	1 o mas
+?	0 o 1
+{#cantidad}	tamaño/numero exacto
+{#inicio, #fin}	rango de numeros,min y max
+
+conjunto de caracteres
+
+[]	caracteres dentro de los corchetes
+[^]	caracteres que no estan dentro de los corchetes
+
+Grupos
+
+()	grupo de numeros
+
+operador
+|	or, uno u otro
