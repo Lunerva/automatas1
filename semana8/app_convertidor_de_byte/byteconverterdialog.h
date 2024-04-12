@@ -11,9 +11,9 @@ public:
     ByteConverterDialog();
 
 private:
-    QLineEdit *decEd;
+    QLineEdit *decEdit;
     QLineEdit *hexEdit;
-    QLineEdit *binEdt;
+    QLineEdit *binEdit;
 };
 
 #endif // BYTECONVERTERDIALOG_H
