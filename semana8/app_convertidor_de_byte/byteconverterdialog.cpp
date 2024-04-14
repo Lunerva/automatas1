@@ -52,7 +52,7 @@ ByteConverterDialog::ByteConverterDialog()
     QRegularExpressionValidator *binVal = new QRegularExpressionValidator(QRegularExpression ("[0-1]{1,8}"));
     binEdit->setValidator(binVal);
 
-    this->setWindowTitle("Conversor de 1 byte");
+    this->setWindowTitle("Conversor de 1 byte_21130876");
     ByteConverter *convertidor = new ByteConverter;
 
     connect(decEdit,SIGNAL(textChanged(QString)),convertidor,SLOT(setDec(QString)));
