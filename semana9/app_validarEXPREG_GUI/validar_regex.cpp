@@ -12,5 +12,16 @@ void validar_regex::setRegex(const QString &regex) {
 void validar_regex::validarEntrada(const QString &entrada) {
     QRegularExpression expReg(regex);
     QRegularExpressionMatch match = expReg.match(entrada);
-    emit resChanged(match.hasMatch() ? "Valido" : "No Valido");
+    // EL USO DE '?' FUNCIONA COMO OPERADOR TERNARIO PARA ABREVIAR EL USO DE IF
+    /*
+    if (match.hasMatch()) {
+        emit resChanged("<h3 style=\"color: #00ff00;\">Valido</h3>");
+    } else {
+        emit resChanged("<h3 style=\"color: #ff0000;\">No Valido</h3>");
+    }
+
+    */
+    emit resChanged(match.hasMatch() ? "<h3 style=\"color: #00ff00;\">Valido</h3>"
+                                     : "<h3 style=\"color: #ff0000;\">No Valido</h3>");
 }
+

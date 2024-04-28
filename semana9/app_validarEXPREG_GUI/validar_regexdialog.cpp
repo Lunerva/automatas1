@@ -26,9 +26,9 @@ validar_regexDIALOG::validar_regexDIALOG()
 
 
     /////////ETIQUETAS
-    QLabel *label_regex = new QLabel("Expresion regular: ");
-    QLabel *label_entrada = new QLabel("Entrada: ");
-    QLabel *label_salida = new QLabel("Resultado");
+    QLabel *label_regex = new QLabel("<h2 style=\"color: #ff77aa;\">Expresion regular: </h2>");
+    QLabel *label_entrada = new QLabel("<h2 style=\"color:#aa77ff;\">Entrada: </h2>");
+    QLabel *label_salida = new QLabel("<h3>Resultado</h3>");
 
     ///////////LINE EDIT
     lineEdit_regex = new QLineEdit;
@@ -48,16 +48,25 @@ validar_regexDIALOG::validar_regexDIALOG()
 
     /// MOSTRAMOS SI COINCIDE MEDIANTE ETIQUETA
     editLayout->addWidget(label_salida);
-//    editLayout->addWidget(label_salida, 2, 0, 1, 2);
 
-    /*
+
     //////////// COMBO BOX CON OPCIONES DE REGEX PREDEFINIDAS
     QComboBox *opciones = new QComboBox();
+
+    connect(opciones, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [=](int index) {
+        lineEdit_regex->setText(opciones->itemText(index));
+    });
+
     /// REGEX DE CORREOS
-    opciones->addItem("[a-zA-B0-1]+@[empresa]+[//D]{2,}+[//D]{2,}?");
+    opciones->addItem(".");
+    opciones->addItem("^[a-zA-Z0-1]+@[jpbarranco_]+\\D{2,}\\.\\D{2,}?$");
+    opciones->addItem("^[0-9]{11}$");
+    opciones->addItem("^\\d{2}-\\d{2}-\\d{2}-\\d{4}-\\d$");
+    opciones->addItem("^81[0-9]{7,}$");
     comboBox->addStretch();
     comboBox->addWidget(opciones);
-*/
+
+
 
     /// AÑADIMOS BOTON PARA SALIR DE LA APLIACION
     QPushButton *botonSalir = new QPushButton("salir");
@@ -72,14 +81,16 @@ validar_regexDIALOG::validar_regexDIALOG()
     mainLayout->addLayout(button); // APARECERA HASTA ABAJO
 
 
-    // Crear instancia de validar_regex y conectar señales y slots
+    // CONECTAR SIGNALS Y SLOTS
     validar_regex *val = new validar_regex(this);
     connect(lineEdit_regex, SIGNAL(textChanged(const QString&)), val, SLOT(setRegex(const QString&)));
     connect(lineEdit_entrada, SIGNAL(textChanged(const QString&)), val, SLOT(validarEntrada(const QString&)));
     connect(val, SIGNAL(resChanged(QString)), label_salida, SLOT(setText(QString)));
 
-    // Configurar el validador inicial
-    crearValidador(lineEdit_entrada, lineEdit_regex->text());
+
+
+    // USO DEL VALIDADOR
+//    crearValidador(lineEdit_entrada, lineEdit_regex->text());
 
     connect(botonSalir, SIGNAL(released()), this, SLOT(accept()));
 
