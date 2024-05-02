@@ -127,8 +127,81 @@ int main()
 
     //IMPLEMENTAR LA APLICACION PARA EL DOMING 28 DE ABRIL 2024
     //USANDO LA PROPUESTA EN CLASE
+/*
+    bool salir=false;
+    do{
+        cout<<"seleccione una opcion"<<endl;
+        cout<<"a)opcion 1 \n b)opcion 2 \n c)opcion 3 \n d)salir"<<endl;
+        char opc;
+        cin>>opc;
+
+        switch(opc){
+        case 'a':{
+            char *cad = new char[10];
+            cout<<"\nApp para determinar si la cadena de caracteres es par o impar, "
+                  "usando un automata finito determinista.\nIngrese el valor: "<<endl;
+            cin>>cad;
+            cout<<"el valor: "<<cad
+               <<"\nSi es 0 es impar, si es 1 es par: "<<analizarNumero(cad)<<endl;
+            }
+            break;
+        case 'b':{
+            string valor;
+            cout<<"\nApp para determinar si la cadena de caracteres es par o impar, "
+                  "\nIngrese el valor: "<<endl;
+            cin>>valor;
+            cout<<"el valor: "<<valor
+               <<"\nSi es 0 es impar, si es 1 es par: "<<analizarCadPar(valor)<<endl;
+            }
+            break;
+        case 'c':{
+            string valor;
+            cout<<"\nApp para determinar si la cadena de caracteres es par o impar, "
+                      "usando un automata finito determinista.\nIngrese el valor: "<<endl;
+            cin>>valor;
+            cout<<"el valor: "<<valor
+                   <<"\nSi es 0 es impar, si es 1 es par: "<<validarPar(valor)<<endl;
+            }
+            break;
+        case 'd':
+            salir=true;
+            break;
+        default:{
+            cout<<"seleccione una opcion valida >:("<<endl;
+            }
+            break;
+        }
+    }while(salir!=true);
+
+*/
+
+    char opc2;
+    string cadenaEntrada;
+    cout<<"AFD PARA DETERMINAR NUMEROS PARES EN UNA CADENA DE ENRADA";
+
+    do{
+        cout<<"numero: ";
+        getline(cin,cadenaEntrada,'\n');
+        cadenaEntrada += ";";
+        char *cadenaAux = new char[cadenaEntrada.length()];
+
+        strcpy(cadenaAux,cadenaEntrada.c_str());
+
+        //strncpy();
+
+        if(!analizarNumero(cadenaAux)){
+            cout<<"NUMERO NON"<<endl;
+        }
+        cout<<"ANALIZAR OTRO NUMERO(s/n)";
+        cin>>opc2;
+        cin.get();
+//        opc2 = cin.get();
+
+    }while(strchr("Ss",opc2));
 
 
+
+/*
 ///////////PROPUESTA 1
     char *cad = new char[10];
     cout<<"App para determinar si la cadena de caracteres es par o impar, "
@@ -152,9 +225,7 @@ int main()
     //cin>>valor;
     cout<<"el valor: "<<valor
            <<"\nSi es 0 es impar, si es 1 es par: "<<validarPar(valor)<<endl;
-
-
-
+*/
 
     return 0;
 }
