@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<string.h>
+#include<iomanip>
 
 using namespace std;
 
@@ -25,6 +26,13 @@ private:
 public:
     TablaDeSimbolos(int = 10);
     Simbolo *addSym(char *, symValue);
+    void mostrarTabla();
+    void mostrar2();
+    bool buscar(char *);
+    Simbolo buscarSim(char *);
+    bool findSym(char *nombre);
+    bool borrarSym(char *);
+    bool borrarSym2(char *);
 };
 
 #endif // TABLADESIMBOLOS_H

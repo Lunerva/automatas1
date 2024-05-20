@@ -45,6 +45,7 @@ Simbolo *TablaDeSimbolos::addSym(char *variable, symValue valor)
     tabla[indice] = nodo;
     nodo->sig = nullptr;
     */
+    //añadir simbolo
     Simbolo *simbolo;
     int indice =Hash(variable);
     if((simbolo= new Simbolo())!=nullptr &&
@@ -56,7 +57,7 @@ Simbolo *TablaDeSimbolos::addSym(char *variable, symValue valor)
         simbolo->valor = valor;
         simbolo->sig = tabla[indice];
         tabla[indice] = simbolo;
-        return simbolo;
+        //return simbolo;
     }
     else{
         delete simbolo;
@@ -64,4 +65,107 @@ Simbolo *TablaDeSimbolos::addSym(char *variable, symValue valor)
     }
     return simbolo;
 }
+
+void TablaDeSimbolos::mostrarTabla()
+{
+    //muestra el arreglo de punteros hacia nodos
+    //que se comportan como listas enlazadas
+    for(int i=0;i<size;i++){
+        cout<<i<<".- ";
+        Simbolo *act = tabla[i];
+        while(act != nullptr){
+           cout<<"|"<<act<<" , "<<act->nombre<<" , "<<act->valor<<" , "<<act->sig<<"| -> ";
+           act = act->sig;
+        }
+        cout<<endl;
+    }
+}
+
+void TablaDeSimbolos::mostrar2()
+{
+    for(int i=0;i<size;i++){
+        for(Simbolo *sym = tabla[i]; sym ;sym=sym->sig){
+            cout<<sym<<setw(20)<<sym->nombre
+               <<setw(10)<<sym->valor<<setw(15)
+              <<"sig: "<<sym->sig<<dec<<endl;
+        }
+    }
+}
+
+//tarea
+bool TablaDeSimbolos::buscar(char *nombre)
+{
+    int indice=Hash(nombre);
+    Simbolo *act = tabla[indice];
+
+    while(act!=nullptr){
+        if(strcmp(act->nombre, nombre)==0){
+            return true;
+        }
+        act= act->sig;
+    }
+
+    return false;
+}
+
+
+//Evaluacion
+//1) implemente un metodo para encontrar un valor en la tabla de simbolos
+//
+bool TablaDeSimbolos::findSym(char *nombre)
+{
+    int indice=Hash(nombre);
+    Simbolo *act = tabla[indice];
+
+    while(act!=nullptr){
+        if(strcmp(act->nombre, nombre)==0){
+            return true;
+        }
+        act= act->sig;
+    }
+
+    return false;
+}
+
+bool TablaDeSimbolos::borrarSym(char *cadena)
+{
+    int slot = Hash(cadena);
+          Simbolo *sym = tabla[slot];
+          string aux = sym->nombre;
+          if(sym && strcmp(sym->nombre,cadena)== 0 )
+          {
+              tabla[slot] = sym->sig;
+              delete sym;
+              return true;
+          }
+          for(sym = tabla[slot]; sym->sig != nullptr ;  sym = sym->sig)
+          {
+              if(strcmp(sym->sig->nombre, cadena) == 0)
+              {
+                  Simbolo *temp = sym->sig;
+                  sym->sig = sym->sig->sig;
+                  delete temp;
+                  return true;
+              }
+          }
+          return false;
+}
+
+bool TablaDeSimbolos::borrarSym2(char *cadena)
+{
+    int slot = Hash(cadena);
+    Simbolo *sym = tabla[slot];
+    for(sym = tabla[slot]; sym->sig != nullptr ;  sym = sym->sig)
+    {
+        if(sym && strcmp(sym->sig->nombre, cadena) == 0)
+        {
+            Simbolo *temp = sym->sig;
+            sym->sig = sym->sig->sig;
+            delete temp;
+            return true;
+        }
+    }
+    return false;
+}
+
 
