@@ -4,32 +4,50 @@ juego::juego()
 {
 
 }
-void juego::iniciarJuego(char *archivo, char *archivo2)
+void juego::iniciarJuego(char *archivo1, char *archivo2)
 {
-    string res;
-    //string palabra;
-    class palabra contenedor[25];
-    crearPalabras(archivo,archivo2,contenedor);
+    char *nomArchivo="C:/Users/Admin/Documents/6to_semestre/automatas/qt/semana3/2024_02_15_app_juegoStrings/verbos.txt";
+    char *archivoTraduccion="C:/Users/Admin/Documents/6to_semestre/automatas/qt/semana3/2024_02_15_app_juegoStrings/verbosRes.txt";
 
+    string origen,destino;
+    map <string,string> palabras;
+    for(int i=0;i<25;i++){
+        origen = archivo().leerArchivoLineaRand(nomArchivo,i);
+        destino = archivo().leerArchivoLineaRand(archivoTraduccion,i);
+        palabras[origen]=destino;
+    }
+    string res;
+
+    bool dentro=true;
+    while(dentro==true){
     cout<<"El juego ha comenzado"<<endl;
-    palabra test=palabraAleatoria(archivo,archivo2);
+
+    palabra test=palabraAleatoria(archivo1,archivo2);
     cout<<test.cont<<endl;
 
 
-//    cout<<test.traduccion;
     cout<<"ingresa la traduccion"<<endl;
     cin>>res;
-    if(test.traduccion.compare(res)){
+
+    if(palabras[test.cont].compare(res)==true){
         cout<<"ganaste :)"<<endl;
     }else{
         cout<<"perdiste"<<endl;
+        cout<<"la respuesta correcta es: "<<palabras[test.cont]<<endl;
     }
     cout<<"otra partida?"<<endl;
     cout<<"1 -> si\n"<<"2 -> no"<<endl;
     int cont;
     cin>>cont;
     if(cont==1){
-        iniciarJuego(archivo,archivo2);
+        //iniciarJuego(archivo1,archivo2);
+        dentro=true;
+    }else if(cont==2){
+        dentro=false;
+    }else{
+        cout<<"ingrese un valor valido"<<endl;
+        dentro =true;
+    }
     }
 }
 

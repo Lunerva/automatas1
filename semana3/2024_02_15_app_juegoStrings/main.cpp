@@ -44,6 +44,7 @@ int main() {
                 salir=true;
                 break;
             default:
+                cout<<"ingrese un caracter valido"<<endl;
                 break;
 
         }
